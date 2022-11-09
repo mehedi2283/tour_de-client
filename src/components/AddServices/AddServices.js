@@ -54,7 +54,7 @@ const AddServices = () => {
   };
 
   return (
-    <div className="col-span-2 rounded-lg border">
+    <div className="w-1/2 mx-auto rounded-lg border">
       {user?.uid ? (
         <form onSubmit={handleSubmit}>
           <h3 className="text-center text-3xl font-bold my-4 ">
@@ -99,10 +99,10 @@ const AddServices = () => {
               placeholder="Write details about this service."
             ></textarea>
           </div>
-          <div className="flex flex-row-reverse">
+          <div className="flex  justify-center mb-4 mt-3">
             <input
               type="submit"
-              value="Add review"
+              value="Add service"
               className="btn btn-primary"
             />
           </div>

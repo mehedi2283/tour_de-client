@@ -1,8 +1,9 @@
 import React, {  } from "react";
 import { IoMdTrash,IoMdSave } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 
-const MyAllReviews = ({ review,handleDelete }) => {
+const MyAllReviews = ({ review,handleDelete,handleUpdate }) => {
   const { customer, email, message, serviceName, img,phone,_id } = review;
   // const {user} = useContext(AuthContext)
   console.log(review)
@@ -31,7 +32,7 @@ const MyAllReviews = ({ review,handleDelete }) => {
         </td>
         <td>{serviceName}</td>
         <th>
-          <button onClick={()=>handleDelete(_id)} className="btn bg-green-400 border-0 hover:text-green-700 hover:bg-green-500"><IoMdSave className="text-3xl "></IoMdSave></button>
+          <Link review={review} handleUpdate={handleUpdate} to={`/update_review/${_id}`}><button  className="btn bg-green-400 border-0 hover:text-green-700 hover:bg-green-500"><IoMdSave className="text-3xl"></IoMdSave></button></Link>
         </th>
         <th>
           <button onClick={()=>handleDelete(_id)} className="btn bg-red-400 border-0 hover:text-red-700 hover:bg-red-500"><IoMdTrash className="text-3xl "></IoMdTrash></button>

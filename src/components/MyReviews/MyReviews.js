@@ -38,6 +38,10 @@ const MyReviews = () => {
             })
         }
     }
+    
+
+
+
     return (
         <>
         {reviews.length>0 ? (
@@ -59,7 +63,7 @@ const MyReviews = () => {
                   </thead>
                   <tbody>
                     {reviews.map((review) => (
-                      <MyAllReviews handleDelete={handleDelete} key={review._id} review={review}></MyAllReviews>
+                      <MyAllReviews  handleDelete={handleDelete} key={review._id} review={review}></MyAllReviews>
                     ))}
                   </tbody>
                 </table>

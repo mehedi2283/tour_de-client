@@ -152,7 +152,7 @@ const ServiceDetails = () => {
                 placeholder="Please give your honest review here for this service"
               ></textarea>
             </div>
-            <div className="flex flex-row-reverse">
+            <div className="flex justify-center mb-2">
               <input
                 type="submit"
                 value="Add review"

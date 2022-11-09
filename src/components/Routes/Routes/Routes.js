@@ -7,6 +7,7 @@ import Services from './../../Services/Services';
 import MyReviews from './../../MyReviews/MyReviews';
 import SecureRoutes from './../PrivateRoutes/PrivateRoutes';
 import AddServices from '../../AddServices/AddServices';
+import UpdateReview from '../../UpdateReview/UpdateReview';
 
 
 
@@ -41,6 +42,12 @@ export const routes = createBrowserRouter([
       {
         path: "/my_reviews/:email",
         element: <SecureRoutes><MyReviews></MyReviews></SecureRoutes>,
+      
+      },
+      {
+        path: "/update_review/:id",
+        element: <SecureRoutes><UpdateReview></UpdateReview></SecureRoutes>,
+        loader: ({params}) => fetch(`http://localhost:5000/update_review/${params.id}`)
       
       },
       {
