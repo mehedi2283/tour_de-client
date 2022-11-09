@@ -1,5 +1,5 @@
 
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import ServiceCard from '../ServiceCard/ServiceCard';
 
 const Places = () => {
@@ -14,6 +14,8 @@ const Places = () => {
                 service={service}
                 ></ServiceCard>)
             }
+            
+            
         </div>
     );
 };

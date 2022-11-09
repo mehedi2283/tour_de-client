@@ -36,7 +36,7 @@ const Login = () => {
           toast.success("Login Successful");
         
       })
-      .catch((e) => console.log(e.message));
+      .catch((e) => setError(e.message));
   };
 
   const handleGoogleSignIn = () => {
@@ -91,15 +91,17 @@ const Login = () => {
                   className="input input-bordered"
                   name="pass"
                 />
+                <p className=" text-red-700">{error}</p>
                 <label className="label">
-                  <Link href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </Link>
+                  <p>Don't have account? <Link to='/register' className=" link link-hover">
+                    <span className=" text-blue-600">Register</span>
+                  </Link></p>
+                  
                 </label>
               </div>
               <div className="form-control mt-6">
                 <input
-                  className="btn btn-primary"
+                  className="btn btn-outline"
                   type="submit"
                   value="Login"
                 />

@@ -126,16 +126,17 @@ const Register = () => {
                   name="pass"
                 />
                 <label className="label">
-                  <Link href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </Link>
+                  <p>Have an account <Link to='/login' className=" link link-hover">
+                     <span className=" text-blue-600">Login</span>
+                     </Link></p>
+                  
                 </label>
               </div>
               <div className="form-control mt-6">
                 <input
                   className="btn btn-primary"
                   type="submit"
-                  value="Login"
+                  value="Register"
                 />
               </div>
             </div>

@@ -4,6 +4,12 @@ import Home from './../../Home/Home';
 import Login from './../../Login/Login/Login';
 import Register from './../../Login/Register/Register';
 import Services from './../../Services/Services';
+import MyReviews from './../../MyReviews/MyReviews';
+import SecureRoutes from './../PrivateRoutes/PrivateRoutes';
+import AddServices from '../../AddServices/AddServices';
+
+
+
 
 
 
@@ -17,12 +23,12 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/services')
+        loader: () => fetch('http://localhost:5000')
       },
       {
         path: "/home",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/services')
+        loader: () => fetch('http://localhost:5000')
       },
       {
         path: "/login",
@@ -33,6 +39,16 @@ export const routes = createBrowserRouter([
         element: <Register></Register>,
       },
       {
+        path: "/my_reviews/:email",
+        element: <SecureRoutes><MyReviews></MyReviews></SecureRoutes>,
+      
+      },
+      {
+        path: "/add_services",
+        element: <SecureRoutes><AddServices></AddServices></SecureRoutes>,
+      
+      },
+      {
         path: "/services",
         element: <Services></Services>,
         loader: () => fetch('http://localhost:5000/services')
@@ -40,7 +56,8 @@ export const routes = createBrowserRouter([
       {
         path: "/details/:id",
         element: <ServiceDetails></ServiceDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`),
+  
       },
 
     ]

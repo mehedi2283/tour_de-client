@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import React, {  } from "react";
+import { IoMdTrash,IoMdSave } from "react-icons/io";
 
-const Review = ({ review }) => {
-  const { customer, email, message, serviceName, img,phone } = review;
+
+const MyAllReviews = ({ review,handleDelete }) => {
+  const { customer, email, message, serviceName, img,phone,_id } = review;
   // const {user} = useContext(AuthContext)
-  // console.log(user)
+  console.log(review)
   return (
     <>
     
@@ -29,6 +30,13 @@ const Review = ({ review }) => {
           <span className="badge badge-ghost badge-sm">{email}</span>
         </td>
         <td>{serviceName}</td>
+        <th>
+          <button onClick={()=>handleDelete(_id)} className="btn bg-green-400 border-0 hover:text-green-700 hover:bg-green-500"><IoMdSave className="text-3xl "></IoMdSave></button>
+        </th>
+        <th>
+          <button onClick={()=>handleDelete(_id)} className="btn bg-red-400 border-0 hover:text-red-700 hover:bg-red-500"><IoMdTrash className="text-3xl "></IoMdTrash></button>
+        </th>
+        
         
       </tr>
 
@@ -37,4 +45,4 @@ const Review = ({ review }) => {
   );
 };
 
-export default Review;
+export default MyAllReviews;
