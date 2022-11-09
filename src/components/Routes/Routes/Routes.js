@@ -8,6 +8,7 @@ import MyReviews from './../../MyReviews/MyReviews';
 import SecureRoutes from './../PrivateRoutes/PrivateRoutes';
 import AddServices from '../../AddServices/AddServices';
 import UpdateReview from '../../UpdateReview/UpdateReview';
+import Blogs from './../../Blogs/Blogs';
 
 
 
@@ -38,6 +39,10 @@ export const routes = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
       },
       {
         path: "/my_reviews/:email",

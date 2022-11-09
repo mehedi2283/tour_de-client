@@ -76,10 +76,17 @@ const Navbar = () => {
             <li>
             <NavLink
             to="/services"
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className=" px-3 py-2 border border-dark rounded-lg"
+            
+            className=" px-3 py-2 border border-dark rounded-lg mx-4"
           >
             Services
+          </NavLink>
+            <NavLink
+            to="/blogs"
+            
+            className=" px-3 py-2 border border-dark rounded-lg"
+          >
+            Blogs
           </NavLink>
             </li>
             {user?.uid ? (
@@ -129,13 +136,13 @@ const Navbar = () => {
                 <NavLink
                   to="/login"
                   className="ms-3 px-3 py-2 border border-dark rounded-3"
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                 
                 >
                   Login
                 </NavLink>
                 <NavLink
                   to="/register"
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  
                   className="ms-3 px-3 py-2 border border-dark rounded-3"
                 >
                   Register
