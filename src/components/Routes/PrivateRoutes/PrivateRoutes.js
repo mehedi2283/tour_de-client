@@ -29,7 +29,7 @@ const SecureRoutes = ({ children }) => {
   if (!user) {
     return (
       <>
-       {toast.error("Please login first")}
+       
         <Navigate to="/login" state={{ from: location }} replace></Navigate>
       
       </>

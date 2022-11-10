@@ -92,7 +92,7 @@ const Navbar = () => {
             {user?.uid ? (
               <div className="flex">
                 <li>
-                  <NavLink className="border rounded-lg mx-4" to={`/my_reviews/${user.email}`}>My reviews</NavLink>
+                  <NavLink className="border rounded-lg mx-4" to={`/my_reviews`}>My reviews</NavLink>
                 </li>
                 <li>
                   <NavLink className="border rounded-lg" to="/add_services">Add service</NavLink>

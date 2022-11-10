@@ -9,15 +9,24 @@ import useTitle from '../../hooks/useTitle';
 const MyReviews = () => {
   useTitle('My Reviews')
 
-    const {user} = useContext(AuthContext)
-    console.log(user);
+    const {user,logOut} = useContext(AuthContext)
+    // console.log(user);
 
     const [reviews,setReviews]= useState([])
-    console.log(typeof(reviews));
+    // console.log(typeof(reviews));
     useEffect(()=>{
-        fetch(`http://localhost:5000/my_reviews?email=${user.email}`)
+        fetch(`http://localhost:5000/my_reviews?email=${user?.email}`,{
+          headers: {
+            authorization:`Bearer ${localStorage.getItem('tourDE-token')}`}
+        })
         
-            .then((res) => res.json())
+            .then((res) => {
+                if(res.status === 401 || res.status === 403){
+                  logOut()
+                }
+              
+             return  res.json()
+            })
             .then((data) => {
                 setReviews(data)
             })
