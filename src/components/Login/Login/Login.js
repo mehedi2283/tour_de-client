@@ -10,11 +10,10 @@ import { FaGoogle } from "react-icons/fa";
 import useTitle from "../../../hooks/useTitle";
 
 const Login = () => {
-  const [error, setError] = useState("");
-  const { signIn, providerLogin } = useContext(AuthContext);
-  const googleProvider = new GoogleAuthProvider();
   useTitle('Login')
-
+  const [error, setError] = useState("");
+  const { signIn, providerLogin,loading } = useContext(AuthContext);
+  const googleProvider = new GoogleAuthProvider();
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -28,8 +27,7 @@ const Login = () => {
 
     signIn(email, password)
       .then((result) => {
-        // const user = result.user;
-        // console.log(result.user);
+       
         form.reset();
         setError("");
         
@@ -52,6 +50,24 @@ const Login = () => {
         console.error(`error`, error);
       });
   };
+
+
+  if (loading) {
+    return (
+      <div class="border my-72 border-gray-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
+  <div class="animate-pulse flex space-x-4">
+    <div class="rounded-full bg-gray-400 h-12 w-12"></div>
+    <div class="flex-1 space-y-4 py-1">
+      <div class="h-4 bg-gray-400 rounded w-3/4"></div>
+      <div class="space-y-2">
+        <div class="h-4 bg-gray-400 rounded"></div>
+        <div class="h-4 bg-gray-400 rounded w-5/6"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    );
+  }
 
   return (
     <div className="border p-4 rounded shadow  mx-auto mb-4 bg-white  ">

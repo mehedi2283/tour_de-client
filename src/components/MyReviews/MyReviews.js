@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from './../../context/AuthProvider/AuthProvider';

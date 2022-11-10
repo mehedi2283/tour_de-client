@@ -1,8 +1,7 @@
-import React, {  useEffect, useState } from 'react';
+import React, {   useState } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
-import { Navigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 

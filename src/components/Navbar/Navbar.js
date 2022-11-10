@@ -10,7 +10,7 @@ import "./Navbar.css";
 const Navbar = () => {
   const navigate = useNavigate();
 
-  const { user, logOut, handleTheme } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
     logOut();
     toast.success("Successfully logged out");

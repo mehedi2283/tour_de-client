@@ -7,8 +7,8 @@ import { AuthContext } from './../../../context/AuthProvider/AuthProvider';
 
 
 const SecureRoutes = ({ children }) => {
-  const { user, loading } = useContext(AuthContext);
   const location = useLocation();
+  const { user, loading } = useContext(AuthContext);
   if (loading) {
     return (
       <div class="border my-72 border-gray-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
