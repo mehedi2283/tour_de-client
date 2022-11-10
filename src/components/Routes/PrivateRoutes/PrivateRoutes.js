@@ -1,8 +1,6 @@
 import React from "react";
 import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-
-import toast from "react-hot-toast";
 import { AuthContext } from './../../../context/AuthProvider/AuthProvider';
 
 
