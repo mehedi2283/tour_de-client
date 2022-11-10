@@ -3,6 +3,7 @@ import useTitle from "../../hooks/useTitle";
 import ServiceCard from "../ServiceCard/ServiceCard";
 import { useContext } from 'react';
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import './Services.css'
 
 const Places = () => {
   useTitle("Services");
@@ -33,7 +34,7 @@ const Places = () => {
 
 <h1 className="font-black text-4xl text-center mb-5">All services</h1>
 <hr />
-    <div className=" container mx-auto grid gap-10 justify-items-center min-[1600px]:grid-cols-3 w-2/4  mt-4 min-[1700px]:grid-cols-3 min-[1050px]:grid-cols-2 ">
+    <div className=" container mx-auto grid gap-10 justify-items-center mt-4  min-[1024px]:grid-cols-3 service-group grid-cols-2  max-[700px]:w-2/3">
  
 
       {services.map((service) => (

@@ -1,0 +1,13 @@
+@media(max-width: 580px) {
+    .service-card2{
+        width: 10%;
+    }
+    
+  }
+@media(max-width: 1270px) {
+    .service-card2{
+        width: 85%;
+        
+    }
+    
+  }

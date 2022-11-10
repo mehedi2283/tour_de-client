@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-      <footer className="footer items-center p-4 bg-neutral text-neutral-content">
+      <footer className="footer items-center p-2 bg-neutral text-neutral-content">
       <div className="items-center grid-flow-col">
-        <img className=' w-14 mx-auto' src='favicon.ico' alt="" /> 
+        <img className=' w-10 mx-auto' src='favicon.ico' alt="" /> 
         <p>Copyright © 2022 - All right reserved by <span className='font-bold text-lg'>tourDE</span></p>
       </div> 
       <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">

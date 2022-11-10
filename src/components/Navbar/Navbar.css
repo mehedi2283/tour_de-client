@@ -1,29 +1,5 @@
-/* .btn-outline-dark:active, .btn-outline-dark:focus {
-    color: rgb(255, 0, 0);
-    background-color: rgb(0, 0, 0);
-    border-color: #ccc;
-    outline: 0;
-  } */
-
-  .link{
-  
-    color: black;
-    font-weight: 700;
-    text-decoration: none;
-    text-decoration-thickness: 3px;
-    transition-duration: 0.2s;
-    
-     
-
-}
-  .link:hover{
-    color: black;
-    /* background-color: black; */
-    font-weight: 700;
-    text-decoration: underline;
-    text-decoration-color: black;
-    text-decoration-thickness: 3px;
-    
-     
-
+@media (max-width: 510px) {
+  .res-nav{
+    flex-wrap: wrap;
+  }
 }

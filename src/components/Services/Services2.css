@@ -1,0 +1,28 @@
+@media (max-width: 1599px) {
+    .home-service{
+       width: 90%;
+       margin: auto;
+       
+    }
+  }
+@media (max-width: 1350px) {
+    .home-service{
+       width: 95%;
+    }
+  }
+@media (max-width: 1260px) {
+    .home-service{
+       width: 80%;
+       grid-template-columns: repeat(2,1fr);
+    }
+  }
+@media (max-width: 1075px) {
+    .home-service{
+       width: 90%;
+    }
+  }
+@media (max-width: 750px) {
+    .home-service{
+       grid-template-columns: repeat(1,1fr);
+    }
+  }

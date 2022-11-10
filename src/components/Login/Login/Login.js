@@ -12,7 +12,7 @@ import useTitle from "../../../hooks/useTitle";
 const Login = () => {
   useTitle('Login')
   const [error, setError] = useState("");
-  const { signIn, providerLogin,loading } = useContext(AuthContext);
+  const { signIn, providerLogin,loading,setLoading } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
   const navigate = useNavigate();
   const location = useLocation();
@@ -54,7 +54,10 @@ const Login = () => {
         
         
       })
-      .catch((e) => setError(e.message));
+      .catch((e) => {
+        setLoading(false)
+        setError(e.message)
+      });
   };
 
   const handleGoogleSignIn = () => {
@@ -89,22 +92,23 @@ const Login = () => {
   }
 
   return (
-    <div className="border p-4 rounded shadow  mx-auto mb-4 bg-white  ">
-      <div className="hero  bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse ">
-          <div className="text-center mx-auto">
-            <h1 className="text-5xl font-bold">Login now!</h1>
+    <div className="border rounded shadow  mx-auto mb-4   ">
+      <div className="hero">
+        <div className="hero-content flex-col-reverse lg:flex-row-reverse ">
+          <div className="">
+            
 
             <img
-              className="w-3/4 p-7 rounded mx-auto"
-              src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?w=826&t=st=1667910142~exp=1667910742~hmac=01062ebe4c69b441983c44d88757f3acc88b3c04aced35f1ac14889050a4661f"
+              className=" p-7 rounded mx-auto"
+              src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?t=st=1668144760~exp=1668145360~hmac=8824fcf444b273049a734a49039366f2bc07427053642f8b7acc1a8f10ee2cda"
               alt=""
             />
           </div>
           <form
             onSubmit={handleSubmit}
-            className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100"
+            className="card flex-shrink-0 w-3/4 lg:max-w-sm shadow-2xl bg-base-100"
           >
+            <h1 className="text-center mx-auto mt-4 text-5xl font-bold">Login now</h1>
             <div className="card-body">
               <div className="form-control">
                 <label className="label">

@@ -1,0 +1,6 @@
+.table th:first-child {
+    position:static;
+    position:static;
+    left: 0px;
+    z-index: 11;
+}

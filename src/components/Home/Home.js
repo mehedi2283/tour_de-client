@@ -36,12 +36,12 @@ const Home = () => {
         Welcome to tourDE
       </h1>
 
-      <div className="grid grid-cols-4">
-        <div className=" flex flex-col gap-4 ">
+      <div className="grid grid-cols-4 home-service-container">
+        <div className=" flex flex-col gap-4 home-service-btn-container ">
           {services.map((service) => (
-            <Link className="btn btn-outline mx-auto w-1/2 me-auto" key={service._id}>{service.place_name}</Link>
+            <Link className="btn btn-outline home-serviceName-btn ml-auto w-1/2 me-auto transform hover:scale-110" key={service._id}>{service.place_name}</Link>
           ))}
-          <Link to='/services' className="btn bg-slate-300 btn-outline w-1/2 mx-auto" >Show all</Link>
+          <Link to='/services' className="home-serviceName-btn btn btn-outline w-1/2 ml-auto transform hover:scale-110" >Show all</Link>
         </div>
         
 
@@ -50,8 +50,8 @@ const Home = () => {
         </div>
       </div>
       <div className="flex justify-center mt-4 mb-4">
-        <Link to="/services">
-          <button className="btn btn-primary ">View all services</button>
+        <Link to="/services" className="btn btn-primary transform hover:scale-110">View all services
+          
         </Link>
       </div>
       <Slider></Slider>

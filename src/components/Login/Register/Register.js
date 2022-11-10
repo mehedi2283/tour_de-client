@@ -14,7 +14,7 @@ const Register = () => {
   const navigate = useNavigate();
   const { loading } = useContext(AuthContext);
   const [error, setError] = useState("");
-  const { createUser, updateUserProfile, logOut } =
+  const { createUser, updateUserProfile, logOut,setLoading } =
     useContext(AuthContext);
 
   const handleLogOut = () => {
@@ -42,6 +42,7 @@ const Register = () => {
         handleProfile(name, photoURL);
       })
       .catch((e) => {
+        setLoading(false)
         
         setError(e.message);
       });
@@ -81,11 +82,11 @@ const Register = () => {
   }
 
   return (
-    <div className="border p-4 rounded shadow  mx-auto mb-4 bg-white ">
-      <div className="hero  bg-base-200">
-        <div className="hero-content flex-col lg:flex-row">
-          <div className="text-center mx-auto">
-            <h1 className="text-5xl font-bold">Register now!</h1>
+    <div className="border  rounded shadow  mx-auto mb-4 ">
+      <div className="hero  ">
+        <div className="hero-content flex-col-reverse lg:flex-row">
+          <div className="">
+           
 
             <img
               className=" p-7 rounded mx-auto"
@@ -95,8 +96,9 @@ const Register = () => {
           </div>
           <form
             onSubmit={handleSubmit}
-            className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100"
+            className="card flex-shrink-0 w-3/4 lg:max-w-lg shadow-2xl bg-base-100"
           >
+             <h1 className="mt-6 text-5xl font-bold text-center mx-auto">Register now!</h1>
             <div className="card-body">
               <div className="form-control">
                 <label className="label">

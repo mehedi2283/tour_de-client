@@ -2,14 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "react-photo-view/dist/react-photo-view.css";
 import { PhotoProvider, PhotoView } from "react-photo-view";
-import './ServiceCard.css'
+import './ServiceCard2.css'
 
-const PlaceCard = ({ service }) => {
+const PlaceCard2 = ({ service }) => {
   // console.log(service)
 
   return (
     <PhotoProvider>
-      <div className="card  card-compact w-72  bg-base-100 shadow-xl duration-200 transform hover:scale-105 service-card">
+      <div className="card  card-compact w-72 bal bg-base-100 shadow-xl duration-200 transform hover:scale-105 service-card2">
         <figure>
           <PhotoView src={service.img}>
             <img src={service.img} alt="" />
@@ -30,4 +30,4 @@ const PlaceCard = ({ service }) => {
   );
 };
 
-export default PlaceCard;
+export default PlaceCard2;

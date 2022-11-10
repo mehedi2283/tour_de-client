@@ -5,6 +5,7 @@ import { AuthContext } from './../../context/AuthProvider/AuthProvider';
 import MyAllReviews from '../MyAllReview/MyAllReview';
 import toast from 'react-hot-toast';
 import useTitle from '../../hooks/useTitle';
+import './MyReviews.css'
 
 const MyReviews = () => {
   useTitle('My Reviews')

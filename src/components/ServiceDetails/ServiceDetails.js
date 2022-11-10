@@ -70,7 +70,7 @@ const ServiceDetails = () => {
   return (
     <PhotoProvider>
     <div className="grid grid-cols-7 my-auto mx-12 gap-2 ">
-      <div className="card  glass mx-auto col-span-2 ">
+      <div className="card  glass col-span-7 mx-auto lg:col-span-2 ">
       <PhotoView src={img}>
             <img className="rounded-lg" src={img} alt="" />
           </PhotoView>
@@ -84,7 +84,7 @@ const ServiceDetails = () => {
           
         </div>
       </div>
-      <div className="col-span-3 rounded-lg border p-3">
+      <div className="lg:col-span-3 max-sm:col-span-7 col-span-4 rounded-lg border p-3">
         <div className="overflow-x-auto w-full">
         <h3 className="text-center text-3xl font-bold my-4 ">
              User reviews
@@ -107,7 +107,7 @@ const ServiceDetails = () => {
         </div>
       </div>
 
-      <div className="col-span-2 rounded-lg border">
+      <div className=" lg:col-span-2 max-sm:col-span-7 col-span-3 rounded-lg border">
         {user?.uid ? (
           <form onSubmit={handleSubmit}>
             <h3 className="text-center text-3xl font-bold my-4 ">

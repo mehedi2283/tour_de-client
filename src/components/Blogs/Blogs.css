@@ -1,0 +1,13 @@
+@media(max-width: 1110px) {
+    .accordion-slot{
+        width: 80%;
+    }
+    
+  }
+@media(max-width: 575px) {
+    .accordion-slot{
+        width: 90%;
+    }
+    
+  }
+  

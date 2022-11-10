@@ -31,10 +31,10 @@ const MyAllReviews = ({ review,handleDelete,handleUpdate }) => {
         </td>
         <td>{serviceName}</td>
         <th>
-          <Link review={review} handleUpdate={handleUpdate} to={`/update_review/${_id}`}><button  className="btn bg-green-400 border-0 hover:text-green-700 hover:bg-green-500"><IoMdSave className="text-3xl"></IoMdSave></button></Link>
+          <Link review={review} handleUpdate={handleUpdate} to={`/update_review/${_id}`}><button  className="btn bg-green-600 border-0 hover:text-green-900 hover:bg-green-700"><IoMdSave className="text-3xl"></IoMdSave></button></Link>
         </th>
         <th>
-          <button onClick={()=>handleDelete(_id)} className="btn bg-red-400 border-0 hover:text-red-700 hover:bg-red-500"><IoMdTrash className="text-3xl "></IoMdTrash></button>
+          <button onClick={()=>handleDelete(_id)} className="btn bg-red-600 border-0 hover:text-red-900 hover:bg-red-700"><IoMdTrash className="text-3xl "></IoMdTrash></button>
         </th>
         
         
