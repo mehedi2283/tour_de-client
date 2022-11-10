@@ -26,12 +26,12 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000')
+        loader: () => fetch('https://tour-de-server-mehedi2283.vercel.app/home')
       },
       {
         path: "/home",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000')
+        loader: () => fetch('https://tour-de-server-mehedi2283.vercel.app/home')
       },
       {
         path: "/login",
@@ -53,7 +53,7 @@ export const routes = createBrowserRouter([
       {
         path: "/update_review/:id",
         element: <SecureRoutes><UpdateReview></UpdateReview></SecureRoutes>,
-        loader: ({params}) => fetch(`http://localhost:5000/update_review/${params.id}`)
+        loader: ({params}) => fetch(`https://tour-de-server-mehedi2283.vercel.app/update_review/${params.id}`)
       
       },
       {
@@ -64,12 +64,12 @@ export const routes = createBrowserRouter([
       {
         path: "/services",
         element: <Services></Services>,
-        loader: () => fetch('http://localhost:5000/services')
+        loader: () => fetch('https://tour-de-server-mehedi2283.vercel.app/services')
       },
       {
         path: "/services/details/:id",
         element: <ServiceDetails></ServiceDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`),
+        loader: ({params}) => fetch(`https://tour-de-server-mehedi2283.vercel.app/details/${params.id}`),
   
       },
       

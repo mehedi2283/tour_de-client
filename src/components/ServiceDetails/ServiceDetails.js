@@ -36,7 +36,7 @@ const ServiceDetails = () => {
       img: user.photoURL,
     };
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://tour-de-server-mehedi2283.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -50,7 +50,7 @@ const ServiceDetails = () => {
           toast.success("Review placed successfully");
           form.reset();
           
-          fetch(`http://localhost:5000/reviews?service=${_id}`)
+          fetch(`https://tour-de-server-mehedi2283.vercel.app/reviews?service=${_id}`)
             .then((res) => res.json())
             .then((data) => {setReviews(data)})
             .catch((err) => console.log(err));
@@ -60,7 +60,7 @@ const ServiceDetails = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?service=${_id}`)
+    fetch(`https://tour-de-server-mehedi2283.vercel.app/reviews?service=${_id}`)
       .then((res) => res.json())
       .then((data) => setReviews(data))
       .catch((err) => console.log(err));

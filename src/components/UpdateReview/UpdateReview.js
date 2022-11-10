@@ -19,7 +19,7 @@ const UpdateReview = () => {
     const handleUpdate = event=> {
         event.preventDefault();
         
-        fetch(`http://localhost:5000/update_review/${storedReviewData._id}`,{
+        fetch(`https://tour-de-server-mehedi2283.vercel.app/update_review/${storedReviewData._id}`,{
             method: 'PUT',
             headers:{
                 'content-type': 'application/json',

@@ -15,7 +15,7 @@ const MyReviews = () => {
     const [reviews,setReviews]= useState([])
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/my_reviews?email=${user.email}`,{
+        fetch(`https://tour-de-server-mehedi2283.vercel.app/my_reviews?email=${user.email}`,{
           headers: {
             authorization:`Bearer ${localStorage.getItem('tourDE-token')}`
           }
@@ -36,7 +36,7 @@ const MyReviews = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('Sure remove this review?')
         if (proceed){
-            fetch(`http://localhost:5000/my_reviews/${id}`,{
+            fetch(`https://tour-de-server-mehedi2283.vercel.app/my_reviews/${id}`,{
             method: 'DELETE',
            
               headers: {

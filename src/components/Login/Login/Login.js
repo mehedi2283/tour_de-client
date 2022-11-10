@@ -34,7 +34,7 @@ const Login = () => {
 
         
         setError("");
-        fetch('http://localhost:5000/jwt',{
+        fetch('https://tour-de-server-mehedi2283.vercel.app/jwt',{
           method: 'POST',
           headers:{
               'content-type' :'application/json'
