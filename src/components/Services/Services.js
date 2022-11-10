@@ -33,7 +33,7 @@ const Places = () => {
 
 <h1 className="font-black text-4xl text-center mb-5">All services</h1>
 <hr />
-    <div className="container mx-auto grid gap-10 justify-items-center grid-cols-3 w-2/4  mt-4">
+    <div className=" container mx-auto grid gap-10 justify-items-center min-[1600px]:grid-cols-3 w-2/4  mt-4 min-[1700px]:grid-cols-3 min-[1050px]:grid-cols-2 ">
  
 
       {services.map((service) => (

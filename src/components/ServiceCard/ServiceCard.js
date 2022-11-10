@@ -8,7 +8,7 @@ const PlaceCard = ({ service }) => {
 
   return (
     <PhotoProvider>
-      <div className="card card-compact w-72 bg-base-100 shadow-xl duration-200 transform hover:scale-105">
+      <div className="card  card-compact w-72 bg-base-100 shadow-xl duration-200 transform hover:scale-105">
         <figure>
           <PhotoView src={service.img}>
             <img src={service.img} alt="" />
