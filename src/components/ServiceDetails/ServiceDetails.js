@@ -40,6 +40,7 @@ const ServiceDetails = () => {
       method: "POST",
       headers: {
         "content-type": "application/json",
+        authorization:`Bearer ${localStorage.getItem('tourDE-token')}`,
       },
       body: JSON.stringify(review),
     })

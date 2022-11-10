@@ -17,7 +17,8 @@ const MyReviews = () => {
     useEffect(()=>{
         fetch(`http://localhost:5000/my_reviews?email=${user.email}`,{
           headers: {
-            authorization:`Bearer ${localStorage.getItem('tourDE-token')}`}
+            authorization:`Bearer ${localStorage.getItem('tourDE-token')}`
+          }
         })
         
             .then((res) => {
@@ -36,7 +37,12 @@ const MyReviews = () => {
         const proceed = window.confirm('Sure remove this review?')
         if (proceed){
             fetch(`http://localhost:5000/my_reviews/${id}`,{
-            method: 'DELETE'
+            method: 'DELETE',
+           
+              headers: {
+                authorization:`Bearer ${localStorage.getItem('tourDE-token')}`
+            }
+            
         })
         .then((res) => res.json())
             .then((data) => {

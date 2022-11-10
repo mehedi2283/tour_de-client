@@ -22,7 +22,10 @@ const UpdateReview = () => {
         fetch(`http://localhost:5000/update_review/${storedReviewData._id}`,{
             method: 'PUT',
             headers:{
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization:`Bearer ${localStorage.getItem('tourDE-token')}`
+                    
+                
             },
             body: JSON.stringify(updateReviewData)
 
