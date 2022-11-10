@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 
 const MyAllReviews = ({ review,handleDelete,handleUpdate }) => {
   const { customer, email, message, serviceName, img,phone,_id } = review;
-  // const {user} = useContext(AuthContext)
-  console.log(review)
+  
   return (
     <>
     

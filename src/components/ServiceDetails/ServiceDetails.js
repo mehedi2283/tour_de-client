@@ -4,6 +4,7 @@ import Review from "../Review/Review";
 import { AuthContext } from "./../../context/AuthProvider/AuthProvider";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import useTitle from "../../hooks/useTitle";
+import toast from "react-hot-toast";
 
 const ServiceDetails = () => {
   useTitle('Details')
@@ -11,9 +12,9 @@ const ServiceDetails = () => {
   // console.log(user);
   const serviceDetails = useLoaderData();
   const { _id, img, place_name, ratings, price, details } = serviceDetails;
-  console.log(_id)
+  
   const [reviews, setReviews] = useState([]);
-  console.log(reviews);
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -45,7 +46,7 @@ const ServiceDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          alert("Review placed successfully");
+          toast.success("Review placed successfully");
           form.reset();
           
           fetch(`http://localhost:5000/reviews?service=${_id}`)
@@ -63,7 +64,7 @@ const ServiceDetails = () => {
       .then((data) => setReviews(data))
       .catch((err) => console.log(err));
   }, [_id]);
-  console.log(reviews.length);
+  
 
   return (
     <PhotoProvider>

@@ -7,11 +7,11 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 
 const UpdateReview = () => {
-  const {user} = useContext(AuthContext)
+ 
 
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || `/my_reviews/${user.email}`
+  const from = location.state?.from?.pathname || `/my_reviews`
   useTitle('Update Review')
     
     const storedReviewData = useLoaderData()
@@ -19,7 +19,7 @@ const UpdateReview = () => {
 
     const handleUpdate = event=> {
         event.preventDefault();
-        console.log(updateReviewData._id)
+        
         fetch(`http://localhost:5000/update_review/${storedReviewData._id}`,{
             method: 'PUT',
             headers:{
