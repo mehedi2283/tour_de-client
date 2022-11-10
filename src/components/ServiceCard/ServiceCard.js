@@ -19,7 +19,7 @@ const PlaceCard = ({ service }) => {
           <h2 className="card-title">{service.place_name}</h2>
           <p>{service.details.slice(1, 100)}...</p>
           <div className="card-actions justify-end">
-            <Link to={`/details/${service._id}`}>
+            <Link to={`/services/details/${service._id}`}>
               <button className="btn btn-primary">Details</button>
             </Link>
           </div>

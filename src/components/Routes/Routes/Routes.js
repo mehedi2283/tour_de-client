@@ -9,6 +9,7 @@ import SecureRoutes from './../PrivateRoutes/PrivateRoutes';
 import AddServices from '../../AddServices/AddServices';
 import UpdateReview from '../../UpdateReview/UpdateReview';
 import Blogs from './../../Blogs/Blogs';
+import { ChevronDoubleUpIcon, ExclamationTriangleIcon } from '@heroicons/react/24/solid'
 
 
 
@@ -66,12 +67,30 @@ export const routes = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/services')
       },
       {
-        path: "/details/:id",
+        path: "/services/details/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`),
   
       },
 
     ]
+},
+{
+  path: '*',
+  element: <div className='text-6xl bg-white text-center mt-52 text-orange-900 font-black'>
+    <h1>No Route Found!</h1>
+
+    <ExclamationTriangleIcon className='h-32 w-32 text-center mx-auto animate-bounce mt-6'></ExclamationTriangleIcon>
+    <Link className=' btn btn-lg btn-error btn-outline' to='/home'>
+
+                
+                    
+                    
+                        <p>Go Back</p>
+                        <ChevronDoubleUpIcon className='h-6 w-6 '></ChevronDoubleUpIcon>
+                   
+            </Link>
+
+  </div>
 }
 ])
