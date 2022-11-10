@@ -7,18 +7,13 @@ const Places = () => {
 
   const services = useLoaderData();
   return (
-    <>
-
-<h1 className="font-black text-4xl text-center mb-5">All services</h1>
-<hr />
-    <div className="container mx-auto grid gap-10 justify-items-center grid-cols-3 w-2/4  mt-4">
- 
+    <div className="container  grid gap-3 justify-items-center grid-cols-3 w-3/4 ">
+      
 
       {services.map((service) => (
         <ServiceCard key={service._id} service={service}></ServiceCard>
       ))}
     </div>
-    </>
   );
 };
 
