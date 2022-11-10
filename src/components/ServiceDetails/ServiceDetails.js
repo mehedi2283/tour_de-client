@@ -77,7 +77,7 @@ const ServiceDetails = () => {
           <p>{details}</p>
           <div className="flex justify-between">
             <span><strong> {price} tk</strong></span>
-            <span><strong>{ratings}</strong></span>
+            <span><strong>Ratings: {ratings}</strong></span>
           </div>
           
         </div>

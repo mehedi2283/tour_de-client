@@ -1,14 +1,35 @@
-import React from "react";
+import React, { useContext } from "react";
 import Services2 from "../Services/Services2";
 import Slider from "../Slider/Slider";
 import { Link, useLoaderData } from "react-router-dom";
 import { HiChevronDoubleUp } from "react-icons/hi2";
 import "./Home.css";
 import useTitle from "../../hooks/useTitle";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Home = () => {
   useTitle("Home");
   const services = useLoaderData();
+
+
+  const { loading } = useContext(AuthContext);
+  if (loading) {
+    return (
+      <div class="border my-72 border-gray-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
+  <div class="animate-pulse flex space-x-4">
+    <div class="rounded-full bg-gray-400 h-12 w-12"></div>
+    <div class="flex-1 space-y-4 py-1">
+      <div class="h-4 bg-gray-400 rounded w-3/4"></div>
+      <div class="space-y-2">
+        <div class="h-4 bg-gray-400 rounded"></div>
+        <div class="h-4 bg-gray-400 rounded w-5/6"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    );
+  }
+
   return (
     <div>
       <h1 id="services" className="text-6xl font-black text-center mb-9">

@@ -8,6 +8,8 @@ const Places = () => {
   useTitle("Services");
   const services = useLoaderData();
   const { loading } = useContext(AuthContext);
+
+
   if (loading) {
     return (
       <div class="border my-72 border-gray-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
@@ -24,6 +26,8 @@ const Places = () => {
 </div>
     );
   }
+
+  
   return (
     <>
 

@@ -46,7 +46,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      // console.log("user inside state change", currentUser);
+      
       setUser(currentUser);
       setLoading(false);
     });
@@ -55,10 +55,10 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
   const [theme, setTheme] = useState('light');
-  // const [darkMode, setDarkMode] = useState(false);
+  
  
   const handleTheme = () =>{
-    // setDarkMode(!darkMode)
+   
     
     if(theme ==='light'){
       setTheme('dark')

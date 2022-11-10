@@ -36,20 +36,9 @@ const AddServices = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          alert("Review placed successfully");
+          alert("Service added successfully.");
           form.reset();
-          // const remaining = reviews.filter(rvw=> rvw._id !== _id)
-          //     const newRvw = reviews.find(rvw=> rvw._id === _id)
-          //     const newReviews = [newRvw,...remaining]
-          //     setReviews(newReviews)
-
-
-        //   fetch(`http://localhost:5000/reviews?service=${_id}`)
-        //     .then((res) => res.json())
-        //     .then((data) => {
-        //       setReviews(data);
-        //     })
-        //     .catch((err) => console.log(err));
+         
         }
       })
       .catch((err) => console.error(err));
