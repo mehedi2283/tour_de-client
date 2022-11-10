@@ -7,12 +7,13 @@ import { AuthContext } from "./../../../context/AuthProvider/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
 
 import { FaGoogle } from "react-icons/fa";
+import useTitle from "../../../hooks/useTitle";
 
 const Login = () => {
   const [error, setError] = useState("");
-
-  const { signIn, logOut, providerLogin } = useContext(AuthContext);
+  const { signIn, providerLogin } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
+  useTitle('Login')
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -27,8 +28,8 @@ const Login = () => {
 
     signIn(email, password)
       .then((result) => {
-        const user = result.user;
-        console.log(result.user);
+        // const user = result.user;
+        // console.log(result.user);
         form.reset();
         setError("");
         
@@ -92,12 +93,7 @@ const Login = () => {
                   name="pass"
                 />
                 <p className=" text-red-700">{error}</p>
-                <label className="label">
-                  <p>Don't have account? <Link to='/register' className=" link link-hover">
-                    <span className=" text-blue-600">Register</span>
-                  </Link></p>
-                  
-                </label>
+                
               </div>
               <div className="form-control mt-6">
                 <input
@@ -114,6 +110,12 @@ const Login = () => {
                   <FaGoogle></FaGoogle> <strong>Login with Google</strong>
                 </button>
               </div>
+              <label className="label">
+                  <p>Don't have account? <Link to='/register' className=" link link-hover">
+                    <span className=" text-blue-600">Register</span>
+                  </Link></p>
+                  
+                </label>
             </div>
           </form>
         </div>

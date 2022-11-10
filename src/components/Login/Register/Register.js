@@ -6,12 +6,14 @@ import "./Register.css";
 
 import toast from "react-hot-toast";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
+import useTitle from "../../../hooks/useTitle";
 
 const Register = () => {
+
+  useTitle('Register')
   const [error, setError] = useState("");
-  const [check, setCheck] = useState(false);
-  const [red, setRed] = useState("btn-danger");
-  const { createUser, updateUserProfile, verifyEmail, logOut } =
+  
+  const { createUser, updateUserProfile, logOut } =
     useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -44,14 +46,7 @@ const Register = () => {
         setError(e.message);
       });
   };
-  const handleChecked = () => {
-    setCheck(!check);
-    if (check) {
-      setRed("btn-danger ");
-    } else {
-      setRed("btn-success");
-    }
-  };
+ 
 
   const handleProfile = (name, photoURL) => {
     const profile = {
@@ -125,12 +120,10 @@ const Register = () => {
                   className="input input-bordered"
                   name="pass"
                 />
-                <label className="label">
-                  <p>Have an account <Link to='/login' className=" link link-hover">
-                     <span className=" text-blue-600">Login</span>
-                     </Link></p>
-                  
-                </label>
+                
+              </div>
+              <div>
+                <p className="text-error">{error}</p>
               </div>
               <div className="form-control mt-6">
                 <input
@@ -139,6 +132,12 @@ const Register = () => {
                   value="Register"
                 />
               </div>
+              <label className="label">
+                  <p>Have an account <Link to='/login' className=" link link-hover">
+                     <span className=" text-blue-600">Login</span>
+                     </Link></p>
+                  
+                </label>
             </div>
           </form>
         </div>

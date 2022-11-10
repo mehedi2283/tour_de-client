@@ -5,8 +5,10 @@ import { useContext } from 'react';
 import { AuthContext } from './../../context/AuthProvider/AuthProvider';
 import MyAllReviews from '../MyAllReview/MyAllReview';
 import toast from 'react-hot-toast';
+import useTitle from '../../hooks/useTitle';
 
 const MyReviews = () => {
+  useTitle('My Reviews')
 
     const {user} = useContext(AuthContext)
     console.log(user);

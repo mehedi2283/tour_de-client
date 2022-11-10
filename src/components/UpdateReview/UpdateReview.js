@@ -1,9 +1,19 @@
 import React, {  useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
+import { Navigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 
-const UpdateReview = ({review}) => {
+const UpdateReview = () => {
+  const {user} = useContext(AuthContext)
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || `/my_reviews/${user.email}`
+  useTitle('Update Review')
     
     const storedReviewData = useLoaderData()
     const [updateReviewData,setUpdateReviewData]= useState(storedReviewData)
@@ -22,7 +32,12 @@ const UpdateReview = ({review}) => {
         .then((res) => res.json())
             .then((data) => {
                 if(data.modifiedCount > 0){
+
+
+                   navigate(from, { replace: true });
+                  
                     toast.success('Review updated')
+                    
                     
                 }
             })
@@ -40,15 +55,7 @@ const UpdateReview = ({review}) => {
     }
     
 
-    // useEffect(()=>{
-    //     fetch(`http://localhost:5000/my_reviews?_id=${user.email}`)
-        
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             setReviews(data)
-    //         })
-    //         .catch((err) => console.log(err));
-    // },[user?.email])
+    
 
     
 

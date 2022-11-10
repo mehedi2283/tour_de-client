@@ -29,8 +29,8 @@ const Navbar = () => {
   };
 
   return (
-    <>
-      <div className="navbar bg-base-100 justify-center">
+    <div className="relative">
+      <div className="navbar bg-base-100 justify-center ">
         <div className="navbar-start lg-flex justify-between mx-4">
           <NavLink
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -153,7 +153,7 @@ const Navbar = () => {
         </ul>
       </div>
       <hr />
-    </>
+    </div>
   );
 };
 
