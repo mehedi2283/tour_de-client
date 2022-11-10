@@ -15,7 +15,7 @@ const MyReviews = () => {
     const [reviews,setReviews]= useState([])
     // console.log(typeof(reviews));
     useEffect(()=>{
-        fetch(`http://localhost:5000/my_reviews?email=${user?.email}`,{
+        fetch(`http://localhost:5000/my_reviews?email=${user.email}`,{
           headers: {
             authorization:`Bearer ${localStorage.getItem('tourDE-token')}`}
         })
@@ -31,7 +31,7 @@ const MyReviews = () => {
                 setReviews(data)
             })
             .catch((err) => console.log(err));
-    },[user?.email])
+    },[user?.email,logOut])
     const handleDelete = id =>{
         const proceed = window.confirm('Sure remove this review?')
         if (proceed){
