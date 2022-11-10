@@ -10,10 +10,10 @@ const MyReviews = () => {
   useTitle('My Reviews')
 
     const {user,logOut} = useContext(AuthContext)
-    // console.log(user);
+    
 
     const [reviews,setReviews]= useState([])
-    // console.log(typeof(reviews));
+    
     useEffect(()=>{
         fetch(`http://localhost:5000/my_reviews?email=${user.email}`,{
           headers: {
