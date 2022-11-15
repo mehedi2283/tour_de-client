@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import useTitle from "../../hooks/useTitle";
+import './AddServices.css'
 
 const AddServices = () => {
   const { user } = useContext(AuthContext);
@@ -27,7 +28,7 @@ const AddServices = () => {
       details: details,
     };
 
-    fetch("https://tour-de-server-mehedi2283.vercel.app/services", {
+    fetch("http://localhost:5000/services", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -47,10 +48,10 @@ const AddServices = () => {
   };
 
   return (
-    <div className="w-1/2 mx-auto rounded-lg border">
+    <div className="w-1/2 add-service-form mx-auto rounded-lg border border-primary">
       {user?.uid ? (
         <form onSubmit={handleSubmit}>
-          <h3 className="text-center text-3xl font-bold my-4 ">
+          <h3 className="text-center text-3xl font-bold my-4 text-primary ">
             Add a service
           </h3>
           <div className="my-auto w-10/12 mx-auto">
@@ -60,27 +61,27 @@ const AddServices = () => {
                 name="place_name"
                 type="text"
                 placeholder="Service Name"
-                className="input input-bordered w-full "
+                className="input bg-primary/5 focus:bg-primary/10 input-bordered w-full   focus:outline-0 focus:border-primary focus:text-primary "
               />
               <input
                 required
                 name="ratings"
                 type="text"
                 placeholder="ratings"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full focus:bg-primary/10 bg-primary/5  focus:outline-0 focus:border-primary focus:text-primary"
               />
               <input
                 required
                 name="price"
                 type="text"
                 placeholder="Price"
-                className="input input-bordered w-full "
+                className="input input-bordered w-full focus:bg-primary/10 bg-primary/5  focus:outline-0 focus:border-primary focus:text-primary"
               />
               <input
                 name="img"
                 type="text"
                 placeholder="img"
-                className="input input-bordered  w-full"
+                className="input input-bordered  w-full focus:bg-primary/10 bg-primary/5  focus:outline-0 focus:border-primary focus:text-primary"
                 
               />
             </div>
@@ -88,7 +89,7 @@ const AddServices = () => {
             <textarea
               name="details"
               required
-              className="textarea textarea-bordered w-full  mt-4 h-40"
+              className="textarea textarea-bordered w-full  mt-4 h-40 focus:bg-primary/10 bg-primary/5  focus:outline-0 focus:border-primary focus:text-primary "
               placeholder="Write details about this service."
             ></textarea>
           </div>

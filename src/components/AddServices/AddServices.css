@@ -1,0 +1,12 @@
+@media(max-width: 900px) {
+    .add-service-form{
+        width: 70%;
+    }
+    
+  }
+@media(max-width: 500px) {
+    .add-service-form{
+        width: 80%;
+    }
+    
+  }

@@ -1,10 +1,16 @@
 
+.card-body{
+  /* background-color: rgba(240, 248, 255, 0.138); */
+}
+
 @media(max-width: 700px) {
     .service-card{
         width: 208px;
     }
     
   }
+
+  
   @media(max-width: 580px) {
     .service-card{
         width: 100%;

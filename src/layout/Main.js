@@ -2,17 +2,19 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
+import './main.css'
+
 
 const Main = () => {
   return (
     <div>
-      <div className="mb-6 sticky top-0 z-10">
+      <div id="navbar" className="mb-6 duration-300  bg-base-100/95 drop-shadow-xl shadow-primary sticky top-0 z-10">
         <Navbar></Navbar>
       </div>
-      <div className="my-12 mb-24 ">
+      <div className="pb-24 outlet ">
         <Outlet></Outlet>
       </div>
-      <div className="mt-6 md:fixed bottom-0 w-full z-20">
+      <div  className="">
         <Footer></Footer>
       </div>
     </div>

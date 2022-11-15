@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 
+
 const useTitle = title => {
     useEffect(()=>{
 
@@ -7,4 +8,4 @@ const useTitle = title => {
         
     },[title])
 }
-export default useTitle;
+export default (useTitle);

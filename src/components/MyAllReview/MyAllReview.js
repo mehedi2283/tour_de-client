@@ -1,16 +1,15 @@
-import React, {  } from "react";
-import { IoMdTrash,IoMdSave } from "react-icons/io";
+import React from "react";
+import { IoMdTrash, IoMdSave } from "react-icons/io";
 import { Link } from "react-router-dom";
+// import UpdateReviewWithModal from "../UpdateReviewWithModal/UpdateReviewWithModal";
+// import UpdateReviewWithModal from './../UpdateReviewWithModal/UpdateReviewWithModal';
 
+const MyAllReviews = ({ review, handleDelete, modalClicked }) => {
+  const { customer, email, message, serviceName, img, phone, _id } = review;
 
-const MyAllReviews = ({ review,handleDelete,handleUpdate }) => {
-  const { customer, email, message, serviceName, img,phone,_id } = review;
-  
   return (
     <>
-    
       <tr>
-       
         <td>
           <div className="flex items-center space-x-3">
             <div className="avatar">
@@ -19,27 +18,42 @@ const MyAllReviews = ({ review,handleDelete,handleUpdate }) => {
               </div>
             </div>
             <div>
-              <div className="font-bold">{customer}</div>
-              <div className="text-sm opacity-50">{phone}</div>
+              <div className="font-bold ">{customer}</div>
+              <div className="text-sm  badge badge-primary badge-sm">{phone}</div>
             </div>
           </div>
         </td>
         <td>
-          {message}
-          <br/>
-          <span className="badge badge-ghost badge-sm">{email}</span>
+          <span className="font-medium">{message}</span>
+          <br />
+          <span className="badge badge-primary badge-sm">{email}</span>
         </td>
         <td>{serviceName}</td>
         <th>
-          <Link review={review} handleUpdate={handleUpdate} to={`/update_review/${_id}`}><button  className="btn bg-green-600 border-0 hover:text-green-900 hover:bg-green-700"><IoMdSave className="text-3xl"></IoMdSave></button></Link>
+          <Link to={`/update_review/${_id}`}>
+            <button className="btn bg-green-600 border-0 text-white hover:bg-green-800">
+              <IoMdSave className="text-3xl"></IoMdSave>
+            </button>
+          </Link>
         </th>
         <th>
-          <button onClick={()=>handleDelete(_id)} className="btn bg-red-600 border-0 hover:text-red-900 hover:bg-red-700"><IoMdTrash className="text-3xl "></IoMdTrash></button>
+          <button
+            onClick={() => handleDelete(_id)}
+            className="btn bg-red-600 border-0 hover:text-red-900 hover:bg-red-800"
+          >
+            <IoMdTrash className="text-3xl text-white "></IoMdTrash>
+          </button>
         </th>
-        
-        
-      </tr>
 
+        {/* The button to open modal */}
+       <th>
+       <label htmlFor="my-modal-3" onClick={ () => modalClicked(_id) } className="btn bg-green-600 border-0  text-white hover:bg-green-800">
+          Update with modal
+        </label>
+       </th>
+       
+      </tr>
+      {/* <UpdateReviewWithModal storedUpdateReviewData={storedUpdateReviewData}  ></UpdateReviewWithModal> */}
       {/* <hr /> */}
     </>
   );

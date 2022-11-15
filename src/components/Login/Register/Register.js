@@ -66,14 +66,14 @@ const Register = () => {
 
   if (loading) {
     return (
-      <div className="border my-72 border-gray-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
+      <div className="border my-72 border-primary/90 shadow rounded-md p-4 max-w-sm w-full mx-auto">
   <div className="animate-pulse flex space-x-4">
-    <div className="rounded-full bg-gray-400 h-12 w-12"></div>
+    <div className="rounded-full bg-primary h-12 w-12"></div>
     <div className="flex-1 space-y-4 py-1">
-      <div className="h-4 bg-gray-400 rounded w-3/4"></div>
+      <div className="h-4 bg-primary rounded w-3/4"></div>
       <div className="space-y-2">
-        <div className="h-4 bg-gray-400 rounded"></div>
-        <div className="h-4 bg-gray-400 rounded w-5/6"></div>
+        <div className="h-4 bg-primary rounded"></div>
+        <div className="h-4 bg-primary rounded w-5/6"></div>
       </div>
     </div>
   </div>
@@ -82,15 +82,15 @@ const Register = () => {
   }
 
   return (
-    <div className="border  rounded shadow  mx-auto mb-4 ">
+    <div className=" mx-auto mb-4 ">
       <div className="hero  ">
         <div className="hero-content flex-col-reverse lg:flex-row">
           <div className="">
            
 
             <img
-              className=" p-7 rounded mx-auto"
-              src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?w=826&t=st=1667910142~exp=1667910742~hmac=01062ebe4c69b441983c44d88757f3acc88b3c04aced35f1ac14889050a4661f"
+              className=" w-11/12 rounded-2xl mx-auto"
+              src="https://i.ibb.co/bBgmH4x/reg.webp"
               alt=""
             />
           </div>
@@ -98,8 +98,9 @@ const Register = () => {
             onSubmit={handleSubmit}
             className="card flex-shrink-0 w-3/4 lg:max-w-lg shadow-2xl bg-base-100"
           >
-             <h1 className="mt-6 text-5xl font-bold text-center mx-auto">Register now!</h1>
-            <div className="card-body">
+            
+            <div className="card-body rounded-2xl">
+            <h1 className="mt-6 text-5xl font-bold text-center mx-auto">Register now</h1>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -107,7 +108,7 @@ const Register = () => {
                 <input
                   type="text"
                   placeholder="name"
-                  className="input input-bordered"
+                  className="input input-bordered text-primary border-primary  w-full bg-primary/5 focus:bg-primary/30 focus:outline-0"
                   name="name"
                 />
               </div>
@@ -118,7 +119,7 @@ const Register = () => {
                 <input
                   type="text"
                   placeholder="photoURL"
-                  className="input input-bordered"
+                  className="input input-bordered text-primary border-primary  w-full bg-primary/5 focus:bg-primary/30 focus:outline-0"
                   name="photoURL"
                 />
               </div>
@@ -129,7 +130,7 @@ const Register = () => {
                 <input
                   type="email"
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input input-bordered text-primary border-primary  w-full bg-primary/5 focus:bg-primary/30 focus:outline-0"
                   name="email"
                 />
               </div>
@@ -140,7 +141,7 @@ const Register = () => {
                 <input
                   type="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered text-primary border-primary  w-full bg-primary/5 focus:bg-primary/30 focus:outline-0"
                   name="pass"
                 />
                 
@@ -156,8 +157,8 @@ const Register = () => {
                 />
               </div>
               <label className="label">
-                  <p>Have an account <Link to='/login' className=" link link-hover">
-                     <span className=" text-blue-600">Login</span>
+                  <p>Have an account <Link to='/login' className=" link link-hover decoration-primary">
+                     <span className=" text-primary">Login</span>
                      </Link></p>
                   
                 </label>

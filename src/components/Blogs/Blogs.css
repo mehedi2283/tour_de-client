@@ -1,12 +1,24 @@
 @media(max-width: 1110px) {
     .accordion-slot{
         width: 80%;
+        
     }
     
   }
 @media(max-width: 575px) {
     .accordion-slot{
         width: 90%;
+    }
+    
+  }
+/* @media(max-width: 1024px) {
+   
+    }
+    
+  } */
+@media(max-width: 767px) {
+    .acc-body{
+      padding: 5%;
     }
     
   }

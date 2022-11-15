@@ -18,15 +18,15 @@ const Review = ({ review }) => {
               </div>
             </div>
             <div>
-              <div className="font-bold">{customer}</div>
-              <div className="text-sm opacity-50">{phone}</div>
+              <div className="font-bold text-primary">{customer}</div>
+              <div className="badge badge-primary badge-sm">{phone}</div>
             </div>
           </div>
         </td>
         <td>
           {message}
           <br/>
-          <span className="badge badge-ghost badge-sm">{email}</span>
+          <span className="badge badge-primary badge-sm">{email}</span>
         </td>
         <td>{serviceName}</td>
         
