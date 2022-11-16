@@ -31,10 +31,8 @@ const Login = () => {
         const currentUser = {
           email: user.email,
         }
-
-        
         setError("");
-        fetch('http://localhost:5000/jwt',{
+        fetch('https://tour-de-server-mehedi2283.vercel.app/jwt',{
           method: 'POST',
           headers:{
               'content-type' :'application/json'
@@ -65,8 +63,35 @@ const Login = () => {
     providerLogin(googleProvider)
       .then((result) => {
         const user = result.user;
-        console.log(`user`, user);
+        const currentUser = {
+          email: user.email,
+        }
+        setError("");
+        fetch('https://tour-de-server-mehedi2283.vercel.app/jwt',{
+          method: 'POST',
+          headers:{
+              'content-type' :'application/json'
+          },
+          body: JSON.stringify(currentUser)
+        })
+        // console.log(`user`, user);
+
+
+
+        .then(res => res.json())
+        .then(data => {
+          
         navigate(from, { replace: true });
+
+          localStorage.setItem('tourDE-token', data.token)
+          navigate(from, { replace: true });
+        toast.success("Login Successful");
+        })
+
+
+
+
+        
         toast.success("Login Successful");
         
       })

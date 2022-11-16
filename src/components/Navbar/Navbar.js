@@ -12,6 +12,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const { user, logOut } = useContext(AuthContext);
+  console.log('i am user',user)
   const handleLogOut = () => {
     logOut();
     toast.success("Successfully logged out");
@@ -79,7 +80,7 @@ const Navbar = () => {
 
   return (
     <div className="relative  border-b-2 border-primary">
-      <div className="navbar justify-between res-nav px-40">
+      <div className="navbar justify-center lg:justify-between res-nav px-40">
         <div className=" flex  res-nav2  ">
           <ul className="menu menu-horizontal">
             <>
@@ -116,7 +117,7 @@ const Navbar = () => {
           </>
 
           <div className="drop-down">
-            <div className="dropdown  dropdown-left flex">
+            <div className="dropdown dropdown-bottom  md:dropdown-left flex">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -220,7 +221,7 @@ const Navbar = () => {
                         <span className="me-2 fs-5 ">{user?.displayName}</span>
                       </NavLink>
                       <button
-                        className=" btn btn-primary  btn-error mb-2"
+                        className=" btn btn-primary w-full mb-2"
                         onClick={handleLogOut}
                       >
                         Log Out

@@ -17,6 +17,7 @@
 .res-nav{
   padding-top:0 ;
   padding-bottom:0 ;
+  
 }
 
 
@@ -31,6 +32,14 @@
   .res-nav2{
     justify-items:space-around;
   }
+  
+}
+@media (min-width: 502px) {
+  .navbar_menu{
+    width:200px;
+    
+  }
+  
 }
 @media (max-width: 1023px) {
   .drop-down{
@@ -47,7 +56,7 @@
     font-size:medium;
   }
   .navbar_menu{
-    width:200px;
+    width:180px;
   }
 }
 @media (max-width: 350px) {
