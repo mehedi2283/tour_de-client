@@ -5,9 +5,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { AuthContext } from "./../../../context/AuthProvider/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
-
 import { FaGoogle } from "react-icons/fa";
 import useTitle from "../../../hooks/useTitle";
+import loginImg from '../../../assets/login.webp';
 
 const Login = () => {
   useTitle('Login')
@@ -104,7 +104,7 @@ const Login = () => {
 
             <img
               className="  rounded-2xl mx-auto"
-              src="https://i.ibb.co/kVnfZGb/login.webp"
+              src={loginImg}
               alt=""
             />
           </div>
@@ -145,19 +145,19 @@ const Login = () => {
                   type="submit"
                   value="Login"
                 />
-                <h1 className="text-2xl font-bold text-center">or</h1>
+                <h1 className="text-2xl font-bold text-center divider divider-vertical">or</h1>
                 <button
                   onClick={handleGoogleSignIn}
-                  className="mb-4 rounded-lg border-0 btn flex gap-4 bg-blue-600"
+                  className="mb-4  border-0 btn flex gap-4 bg-blue-600 normal-case font-bold text-lg"
                   variant="outline-primary"
                 >
-                  <FaGoogle></FaGoogle> <strong>Login with Google</strong>
+                  <FaGoogle></FaGoogle> SignIn with Google
                 </button>
               </div>
               <label className="label">
                   <p>Don't have account? <Link to='/register' className=" link link-hover decoration-primary">
-                    <span className=" text-primary">Register</span>
-                  </Link></p>
+                    <span className=" font-extrabold text-primary">Register</span>
+                  </Link> here</p>
                   
                 </label>
             </div>

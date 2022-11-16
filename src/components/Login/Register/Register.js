@@ -7,6 +7,7 @@ import "./Register.css";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 import useTitle from "../../../hooks/useTitle";
+import regImg from '../../../assets/reg.webp';
 
 const Register = () => {
 
@@ -90,7 +91,7 @@ const Register = () => {
 
             <img
               className=" w-11/12 rounded-2xl mx-auto"
-              src="https://i.ibb.co/bBgmH4x/reg.webp"
+              src={regImg}
               alt=""
             />
           </div>
@@ -157,9 +158,9 @@ const Register = () => {
                 />
               </div>
               <label className="label">
-                  <p>Have an account <Link to='/login' className=" link link-hover decoration-primary">
-                     <span className=" text-primary">Login</span>
-                     </Link></p>
+                  <p>Already have an account? <Link to='/login' className=" link link-hover decoration-primary">
+                     <span className=" text-primary font-extrabold">Login</span>
+                     </Link> here</p>
                   
                 </label>
             </div>

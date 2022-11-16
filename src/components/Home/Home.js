@@ -6,6 +6,7 @@ import { HiChevronDoubleUp } from "react-icons/hi2";
 import "./Home.css";
 import useTitle from "../../hooks/useTitle";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import bannerImg from "../../assets/home-card-banner.webp"
 
 const Home = () => {
   useTitle("Home");
@@ -75,11 +76,11 @@ const Home = () => {
           </div>
           <Slider></Slider>
           <div className="border  mx-auto  mb-4 home-banner-card border-primary/30">
-            <div className="card lg:card-side bg-base-100 shadow-xl">
+            <div className="card rounded-none lg:card-side bg-base-100 shadow-xl">
               <figure className="">
                 <img
-                  className="h-48 w-full object-cover md:h-full rounded-none"
-                  src="https://i.ibb.co/vXJFKhY/home-card-banner.webp"
+                  className="h-48 w-full object-cover md:h-full "
+                  src={bannerImg}
                   alt="Album"
                 />
               </figure>

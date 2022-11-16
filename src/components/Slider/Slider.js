@@ -4,6 +4,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import './Slider.css'
+import slider1 from '../../assets/sliderimg 1 .jpg';
+import slider2 from '../../assets/img slider 2.webp';
+import slider3 from '../../assets/slider_img_3_1040x564.jpg';
+import slider4 from '../../assets/slider img 4_1040x564.webp';
 
 
 import { Autoplay, Pagination, Navigation } from "swiper";
@@ -27,22 +31,22 @@ const Slider = () => {
       >
         <SwiperSlide ><img
               alt=""
-              src="https://i.ibb.co/5vptVgK/sliderimg-1.jpg "
+              src={slider1}
               className="w-full rounded-2xl object-fill"
             ></img></SwiperSlide>
         <SwiperSlide> <img
               alt=""
-              src="https://i.ibb.co/z8DVsJr/img-slider-2.webp"
-              className="w-full rounded-2xl object-fill"
+              src={slider2}
+              className={slider2}
             /></SwiperSlide>
         <SwiperSlide><img
               alt=""
-              src="https://i.ibb.co/7k4RMM4/slider-img-3-1040x564.jpg"
+              src={slider3}
               className="w-full rounded-2xl object-fill "
             /></SwiperSlide>
         <SwiperSlide><img
               alt=""
-              src="https://i.ibb.co/bXYtzNQ/slider-img-4-1040x564.webp"
+              src={slider4}
               className="w-full rounded-2xl object-fill"
             /></SwiperSlide>
         

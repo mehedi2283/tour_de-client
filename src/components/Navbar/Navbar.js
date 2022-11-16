@@ -79,7 +79,7 @@ const Navbar = () => {
 
   return (
     <div className="relative  border-b-2 border-primary">
-      <div className="navbar justify-around res-nav px-40">
+      <div className="navbar justify-between res-nav px-40">
         <div className=" flex  res-nav2  ">
           <ul className="menu menu-horizontal">
             <>
@@ -350,13 +350,13 @@ const Navbar = () => {
                         <li className="gap-4 flex flex-col">
                           <NavLink
                             to="/login"
-                            className="ms-3 font-extrabold px-3 py-2 btn btn-outline btn-primary   "
+                            className="ms-3 font-extrabold px-3 py-2 btn btn-outline    "
                           >
                             Login
                           </NavLink>
                           <NavLink
                             to="/register"
-                            className="ms-3 font-extrabold px-3 py-2 btn-outline btn btn-primary  "
+                            className="ms-3 font-extrabold px-3 py-2 btn-outline btn   "
                           >
                             Register
                           </NavLink>
