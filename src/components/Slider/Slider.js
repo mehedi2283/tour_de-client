@@ -19,7 +19,7 @@ const Slider = () => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 2000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -37,7 +37,7 @@ const Slider = () => {
         <SwiperSlide> <img
               alt=""
               src={slider2}
-              className={slider2}
+              className="w-full rounded-2xl object-fill"
             /></SwiperSlide>
         <SwiperSlide><img
               alt=""
